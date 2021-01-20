@@ -26,7 +26,8 @@ def get_transcricao_discurso_camara(url, nomeParlamentar):
     obtém via webscraping a transcrição de um discurso do deputado dada a url e o nome parlamentar 
     """
     r = requests.get(url)
-    soup = BeautifulSoup(r.content, 'html.parser')
+    #soup = BeautifulSoup(r.content, 'html.parser')
+    soup = BeautifulSoup(r.content,"html.parser",from_encoding="iso-8859-1")
     
     texto = None
     titulo = None
